@@ -17,4 +17,8 @@ int main(){
     numbers.push_back(7);
     numbers.push_back(11);
     cout << numbers << endl;
+    vector<int>::iterator it = number.begin(); // THIS is an iterator 
+    // vector<int>::iterator can be replaced by auto
+    // auto it = number.begin();
+    numbers.insert(it, 1, 88);
 }
