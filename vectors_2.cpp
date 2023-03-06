@@ -9,8 +9,11 @@ void display_info(vector<T> &vec) {
     cout << "vec.capacity(): " << vec.capacity() << endl;
 }
 
-ostream &operator<<(){
-    
+ostream &operator<<(ostream &output, vector<T> vec){
+    for(typename vector<T>::iterator it = vec.begin(); it != vec.end(); it++){
+        output << *it << ' ';
+    }
+    return output;
 }
 
 template <typename T>
@@ -22,6 +25,7 @@ void add_data(vector<T> &vec, T data_to_add) {
 
 int main() {
     vector<int> vec;
+    vec.reserve(20);
     for (int i = 0; i < 9; i++) {
         add_data(vec, i + 10);
     }
